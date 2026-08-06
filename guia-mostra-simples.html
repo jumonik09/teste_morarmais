@@ -1796,6 +1796,267 @@
           margin-top: 48px;
         }
       }
+      /* Acabamento editorial — preserva a identidade e melhora a leitura */
+      :root {
+        --paper-raised: rgba(255, 255, 255, 0.72);
+        --shadow-soft: 0 18px 55px rgba(32, 35, 31, 0.075);
+        --shadow-hover: 0 24px 60px rgba(32, 35, 31, 0.12);
+      }
+      ::selection {
+        background: var(--accent);
+        color: var(--paper);
+      }
+      header {
+        min-height: 74px;
+      }
+      .brand img {
+        filter: contrast(1.04);
+      }
+      .hero {
+        position: relative;
+        isolation: isolate;
+      }
+      .hero:before {
+        content: "26";
+        position: absolute;
+        z-index: -1;
+        top: 45%;
+        left: 50%;
+        color: rgba(102, 116, 95, 0.045);
+        font: 500 clamp(180px, 25vw, 330px) / 0.7 var(--serif);
+        letter-spacing: -0.1em;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      .hero .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .hero .eyebrow:before,
+      .hero .eyebrow:after {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.5;
+      }
+      .hero h1 {
+        text-wrap: balance;
+      }
+      .hero-bottom {
+        justify-content: center;
+      }
+      .video-feature {
+        max-width: 620px;
+      }
+      .video-credit {
+        max-width: 620px;
+      }
+      .details {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .detail {
+        padding-right: 27px;
+      }
+      .detail strong {
+        display: block;
+        text-wrap: balance;
+      }
+      .history-kicker,
+      .guide-header .label {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .history-kicker:before,
+      .guide-header .label:before {
+        content: "";
+        width: 18px;
+        height: 1px;
+        background: currentColor;
+      }
+      .guide-header {
+        padding-top: 92px;
+      }
+      .guide-header .count {
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.48);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+      }
+      .filter {
+        align-items: center;
+      }
+      .filter:before {
+        content: "Pavimento";
+        margin-right: 5px;
+        color: var(--muted);
+        font: 8px var(--mono);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .map-explorer {
+        min-height: 455px;
+        box-shadow: var(--shadow-soft);
+      }
+      .map-board {
+        min-height: 455px;
+        padding: 27px 30px 30px;
+      }
+      .map-markers {
+        min-height: 350px;
+        gap: 10px;
+        padding: 11px;
+        border-color: rgba(102, 116, 95, 0.25);
+        box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.28);
+      }
+      .map-room {
+        display: grid;
+        place-items: center;
+        min-width: 0;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+      }
+      .map-room:before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: currentColor;
+        opacity: 0.45;
+      }
+      .map-room.active {
+        transform: scale(1.055);
+      }
+      .map-detail {
+        padding: 31px;
+      }
+      .map-detail .label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .map-detail .label:before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(102, 116, 95, 0.12);
+      }
+      .map-detail-num {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(102, 116, 95, 0.3);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.62);
+      }
+      .map-detail h3 {
+        text-wrap: balance;
+      }
+      .room {
+        min-height: 158px;
+        padding: 19px;
+        background: linear-gradient(145deg, var(--floor-tint), rgba(255, 255, 255, 0.76) 72%);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+      }
+      .room:hover,
+      .room.active {
+        box-shadow: var(--shadow-hover);
+      }
+      .room-num {
+        box-shadow: 0 5px 13px color-mix(in srgb, var(--floor) 25%, transparent);
+      }
+      @media (max-width: 900px) {
+        .guide-header {
+          padding-top: 70px;
+        }
+        .map-explorer,
+        .map-board {
+          min-height: 400px;
+        }
+        .map-markers {
+          min-height: 310px;
+        }
+      }
+      @media (max-width: 680px) {
+        header {
+          min-height: 62px;
+        }
+        .hero:before {
+          top: 47%;
+          font-size: clamp(150px, 52vw, 220px);
+        }
+        .hero .eyebrow:before,
+        .hero .eyebrow:after {
+          width: 15px;
+        }
+        .detail {
+          padding-right: 0;
+        }
+        .guide-header {
+          padding-top: 55px;
+        }
+        .guide-header .count {
+          font-size: 9px;
+        }
+        .filter {
+          margin: 0 -18px;
+          padding-right: 18px;
+          padding-left: 18px;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .filter::-webkit-scrollbar {
+          display: none;
+        }
+        .filter:before,
+        .filter button {
+          flex: 0 0 auto;
+        }
+        .map-explorer,
+        .map-board {
+          min-height: 318px;
+        }
+        .map-board {
+          padding: 15px;
+        }
+        .map-markers {
+          min-height: 238px;
+          gap: 4px;
+          padding: 5px;
+        }
+        .map-room {
+          font-size: 9px;
+        }
+        .map-room:before {
+          top: 4px;
+          right: 4px;
+          width: 3px;
+          height: 3px;
+        }
+        .map-detail {
+          padding: 22px;
+        }
+        .map-detail-num {
+          width: 34px;
+          height: 34px;
+        }
+        .room {
+          border-left-width: 4px;
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -2116,7 +2377,7 @@
             "Arqué Móveis, Falci Elétrica, Kaili Oliveira — Colecionadora, La Veni Decor, LGamalier Facility, Luminato | Othon de Carvalho, Portobello Shop, Placas.",
         },
         5: {
-          src: "MMBH26-©Ivan Araújo (50).jpg",
+          src: "MMBH26-©Ivan Araújo (7).jpg",
           name: "Galeria Alexandre Lemos | Horizonte Vertical",
           professional: "Pavilhão 95 Arquitetura",
           contacts:
@@ -2508,11 +2769,20 @@
           toggleLightbox(false);
       });
       document.querySelectorAll("[data-floor]").forEach((button) =>
-        button.addEventListener("click", () => {
-          document.querySelector(".filter .active").classList.remove("active");
-          button.classList.add("active");
-          render(button.dataset.floor);
-        }),
+        {
+          button.setAttribute(
+            "aria-pressed",
+            String(button.classList.contains("active")),
+          );
+          button.addEventListener("click", () => {
+            document.querySelectorAll("[data-floor]").forEach((item) => {
+              const active = item === button;
+              item.classList.toggle("active", active);
+              item.setAttribute("aria-pressed", String(active));
+            });
+            render(button.dataset.floor);
+          });
+        },
       );
       render("Todos");
       const revealItems = document.querySelectorAll(
